@@ -1,7 +1,7 @@
 #include <iostream>
  using namespace std;
 
- int LeftRotateArray(int arr[],int n){
+ void LeftRotateArray(int arr[],int n){
      int first = arr[0];
 
     for (int i = 1; i < n; i++)
