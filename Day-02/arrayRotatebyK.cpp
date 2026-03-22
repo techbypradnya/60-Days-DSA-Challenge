@@ -2,13 +2,21 @@
 using namespace std;
 
 void LeftRotateArray(int arr[], int n, int k)
-{
-    int first = arr[0];
-    for (int i = 1; i < n; i++)
+{   
+    k = k % n;
+    int temp[k];
+    for (int i = 0; i < k; i++)
     {
-        arr[i - 1] = arr[i];
+        temp[i] = arr[i];
     }
-    arr[n - 1] = first;
+    for (int i = k; i < n; i++)
+    {
+        arr[i - k] = arr[i];
+    }
+    for (int i = 0; i < k; i++)
+    {
+        arr[n - k + i] = temp[i];
+    }
 }
 
 int main()
