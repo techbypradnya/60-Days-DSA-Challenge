@@ -9,12 +9,18 @@ void arrayReversing(int arr[], int n)
     while (start < end)
     {
 
-        int temp = arr[start];
-        arr[start++] = arr[end];
-        arr[end--] = temp;
+        // int temp = arr[start];
+        // arr[start++] = arr[end];
+        // arr[end--] = temp;
 
-        // start++;
-        // end--;
+       
+
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+
+        start++;
+        end--;
     }
 }
 
