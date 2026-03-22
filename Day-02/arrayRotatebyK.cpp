@@ -22,15 +22,18 @@ int main()
     {
         cin >> arr[i];
     }
+
+    int k;
+    cout << "Enter number of rotations: ";
+    cin >> k;
+    
     LeftRotateArray(arr, n);
     cout << "After left rotation: ";
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
-    int k;
-    cout << "Enter number of rotations: ";
-    cin >> k;
+    
 
     return 0;
 }
