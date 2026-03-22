@@ -1,6 +1,10 @@
 #include <iostream>
  using namespace std;
 
+ int LeftRotateArray(int arr[],int n){
+    
+ }
+
 int main() {
    int n;
    cout << "Enter the size of the array : ";
