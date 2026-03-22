@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int arrayReversing(int arr[], int n)
+void arrayReversing(int arr[], int n)
 {
     int start = 0;
     int end = n - 1;
 
     while (start < end)
     {
-       
-        int temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
 
-        start++;
-        end--;
+        int temp = arr[start];
+        arr[start++] = arr[end];
+        arr[end--] = temp;
+
+        // start++;
+        // end--;
     }
 }
 
@@ -31,10 +31,11 @@ int main()
         cin >> arr[i];
     }
 
-    arrayReversing(arr,n);
-    cout << "Reversed array";
-    for(int i = 0;i<n;i++){
-        cout << arr[i];
+    arrayReversing(arr, n);
+    cout << "Reversed array : " << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
     }
     return 0;
 }
