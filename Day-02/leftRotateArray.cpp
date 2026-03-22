@@ -1,8 +1,9 @@
 #include <iostream>
- using namespace std;
+using namespace std;
 
- void LeftRotateArray(int arr[],int n){
-     int first = arr[0];
+void LeftRotateArray(int arr[], int n)
+{
+    int first = arr[0];
 
     for (int i = 1; i < n; i++)
     {
@@ -10,25 +11,30 @@
     }
 
     arr[n - 1] = first;
+}
 
- }
+int main()
+{
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
 
-int main() {
-   int n;
-   cout << "Enter the size of the array : ";
-   cin >> n;
-   int arr[n];
+    int arr[n];
 
-   cout << " Enter the elements of the array :";
-    for(int i =0;i< n ; i++){
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < n; i++)
+    {
         cin >> arr[i];
     }
+
+    // ✅ CALL THE FUNCTION
+    LeftRotateArray(arr, n);
 
     cout << "After left rotation: ";
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
-   
+
     return 0;
 }
