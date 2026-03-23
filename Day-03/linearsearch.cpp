@@ -1,6 +1,10 @@
 #include <iostream>
  using namespace std;
 
+ void linearSearch(int arr[], int n,int key){
+    
+ }
+
 int main() {
     int n;
     cout << "Enter the size of the array: ";
@@ -13,6 +17,6 @@ int main() {
     int key;
     cout << "Enter the key to search: ";
     cin >> key;
-    
+
     return 0;
 }
