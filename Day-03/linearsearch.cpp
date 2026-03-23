@@ -23,5 +23,12 @@ int main() {
     cout << "Enter the key to search: ";
     cin >> key;
 
+    int result = linearSearch(arr, n, key);
+    if(result != -1){
+        cout << "Element found at index: " << result << endl;
+    } else {
+        cout << "Element not found in the array." << endl;
+    }
+
     return 0;
 }
