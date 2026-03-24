@@ -18,7 +18,15 @@ int removeDuplicates(int arr[], int n) {
 }
 
 int main() {
-    int arr[] = {1, 1, 2, 2, 3, 3, 4};
+   int n;
+   cout <<"Enter the size of the Array :";
+
+   int arr[n];
+
+   cout << "Enter the elements of the array ( in sorted order ) : ";
+   for(int i = 0;i < n;i++){
+    cin >> arr[i];
+   }
     int n = sizeof(arr) / sizeof(arr[0]);
 
     int newSize = removeDuplicates(arr, n);
