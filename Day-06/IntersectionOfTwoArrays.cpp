@@ -1,20 +1,37 @@
 #include <iostream>
 using namespace std;
 
-int UnionOfTwoArrays(int arr1[], int arr2[], int n, int m)
+int UnionOfTwoArrays(int arr1[], int arr2[], int n, int m, int unionArr[])
 {
-    int count = 0;
+    int k = 0;
+
+    // Add all elements of first array
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < m; j++)
+        unionArr[k++] = arr1[i];
+    }
+
+    // Add unique elements from second array
+    for (int i = 0; i < m; i++)
+    {
+        bool isDuplicate = false;
+
+        for (int j = 0; j < k; j++)
         {
-            if (arr1[i] == arr2[j])
+            if (arr2[i] == unionArr[j])
             {
-                count++;
+                isDuplicate = true;
+                break;
             }
         }
+
+        if (!isDuplicate)
+        {
+            unionArr[k++] = arr2[i];
+        }
     }
-    return count;
+
+    return k; // size of union
 }
 
 int main()
@@ -22,10 +39,12 @@ int main()
     int n, m;
     cout << "Enter the size of the First Array:" << endl;
     cin >> n;
+
     cout << "Enter the size of the Second Array:" << endl;
     cin >> m;
 
-    int arr1[n], arr2[m];
+    int arr1[n], arr2[m], unionArr[n + m];
+
     cout << "Enter the Elements of the First Array:" << endl;
     for (int i = 0; i < n; i++)
     {
@@ -38,7 +57,15 @@ int main()
         cin >> arr2[i];
     }
 
-    int result = UnionOfTwoArrays(arr1, arr2, n, m);
-    cout << "The Union of the Two Arrays is : " << result << endl;
+    int size = UnionOfTwoArrays(arr1, arr2, n, m, unionArr);
+
+    cout << "Union of the Two Arrays is: ";
+    for (int i = 0; i < size; i++)
+    {
+        cout << unionArr[i] << " ";
+    }
+
+    cout << "\nTotal number of union elements: " << size << endl;
+
     return 0;
 }
