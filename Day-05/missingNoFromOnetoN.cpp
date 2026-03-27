@@ -15,17 +15,17 @@ int findMissing(int arr[], int n) {
 int main() {
     int n;
 
-    cout << "Enter the size of the array (n-1): " << endl;  // FIX
+    cout << "Enter the size of the array (n-1): " << endl;  
     cin >> n;
 
     int arr[n];
 
-    cout << "Enter the elements of the array:\n";  // FIX
+    cout << "Enter the elements of the array:\n"; 
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-
-    cout << "Missing number: " << findMissing(arr, n + 1);
+    int missingNumber = findMissing(arr, n);
+    cout << "The missing number is: " << missingNumber << endl;
 
     return 0;
 }
